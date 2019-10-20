@@ -71,8 +71,8 @@
 
 - ### Using Bank API's
 
-  - `GET /bank/{ifsc}/`
-    - GET API to fetch a bank details, given branch IFSC code.
+  - `GET /bank/<ifsc>/`
+    - `GET` request to fetch a bank details, given branch IFSC code.
     - `JWT token` should be included in the headers as `Authorization:"<jwt_token>"`
 
     - Sample CURL:
@@ -83,7 +83,7 @@
 
   - `GET /bank?bank_name=<bank-name>&city=<city-name>&limit=<limit>&offset=<offset>`
 
-    - GET API to fetch all details of branches, given bank name and a city.
+    - `GET` request to fetch all details of branches, given bank name and a city.
     - This should also include `JWT token` in the headers.
     - Sample CURL:
 
