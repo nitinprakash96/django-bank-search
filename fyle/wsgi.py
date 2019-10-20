@@ -13,4 +13,9 @@ from django.core.wsgi import get_wsgi_application
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'fyle.settings')
 
+if os.getenv('mode') == 'STAGING':
+    os.environ['DJANGO_SETTINGS_MODULE'] = 'fyle.staging'
+elif os.getenv('mode') == 'PRODUCTION':
+    os.environ['DJANGO_SETTINGS_MODULE'] = 'fyle_backend.production'
+
 application = get_wsgi_application()

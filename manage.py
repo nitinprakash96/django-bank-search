@@ -6,6 +6,10 @@ import sys
 
 def main():
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'fyle.settings')
+    if os.getenv('mode') == 'STAGING':
+        os.environ['DJANGO_SETTINGS_MODULE'] = 'fyle.staging'
+    elif os.getenv('mode') == 'PRODUCTION':
+        os.environ['DJANGO_SETTINGS_MODULE'] = 'fyle_backend.production'
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
